@@ -49,7 +49,6 @@ function [x,out] = l1_dual_ALM(x0, A, b, mu, opts);
 		while iter<subiter;
 			[dz, Hz] = dzHz(z,lambda);
 			z = z - Hz\dz;
-			%while max((abs(dz)))>tol
 			l=0;
 			while l<Niter
 				[dz, Hz] = dzHz(z,lambda);
@@ -80,7 +79,6 @@ function [x,out] = l1_dual_ALM(x0, A, b, mu, opts);
 	while iter<finiter
 		[dz, Hz] = dzHz(z,lambda);
 		z = z - Hz\dz;
-		%while max((abs(dz)))>tol
 		l=0;
 		while l<2
 			[dz, Hz] = dzHz(z,lambda);
